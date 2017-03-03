@@ -27,8 +27,10 @@ make check
 
 if [  "$(uname)" != "Darwin" ]; then
     make libzn_poly.so
+    make install
+    ln -sf "$PREFIX/lib/libzn_poly-${PKG_VERSION}.so" "$PREFIX/lib/libzn_poly.so"
 else
     make libzn_poly.dylib
+    make install
 fi
-make install
 
