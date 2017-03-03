@@ -173,7 +173,7 @@
 +print("install:")
 +print("\tmkdir -p %s/include/zn_poly" % prefix)
 +print("\tmkdir -p %s/lib" % prefix)
-+print("\tcp libzn_poly.* %s/lib" % prefix)
++print("\tcp libzn_poly*.* %s/lib" % prefix)
 +print("\tcp include/zn_poly.h %s/include/zn_poly" % prefix)
 +print("\tcp include/wide_arith.h %s/include/zn_poly" % prefix)
 +print("")
