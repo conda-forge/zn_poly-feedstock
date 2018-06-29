@@ -14,14 +14,16 @@ Summary: zn_poly is a C library for polynomial arithmetic in Z/nZ[x], where n is
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/zn_poly-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/zn_poly-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/zn_poly-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/zn_poly-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/zn_poly-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/zn_poly-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/zn_poly-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/zn_poly-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/zn_poly/badges/version.svg)](https://anaconda.org/conda-forge/zn_poly)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/zn_poly/badges/downloads.svg)](https://anaconda.org/conda-forge/zn_poly)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-zn_poly-green.svg)](https://anaconda.org/conda-forge/zn_poly) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/zn_poly.svg)](https://anaconda.org/conda-forge/zn_poly) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/zn_poly.svg)](https://anaconda.org/conda-forge/zn_poly) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/zn_poly.svg)](https://anaconda.org/conda-forge/zn_poly) |
 
 Installing zn_poly
 ==================
@@ -66,6 +68,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
