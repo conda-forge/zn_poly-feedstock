@@ -35,9 +35,9 @@ requirements:
   build:
     - libtool
     - {{ compiler('c') }}
+    - python
   host:
     - gmp
-    - python
   run:
     - gmp
 
