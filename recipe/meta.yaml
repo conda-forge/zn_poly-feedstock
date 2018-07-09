@@ -28,17 +28,18 @@ source:
 
 
 build:
-  number: 1
-  skip: true  # [win or py!=36]
+  number: 2
+  skip: true  # [win]
 
 requirements:
   build:
-    - toolchain
     - libtool
-    - gmp >=5.0.1,<7
-    - python
+    - {{ compiler('c') }}
+    - python  *
+  host:
+    - gmp
   run:
-    - gmp >=5.0.1,<7
+    - gmp
 
 test:
   commands:
