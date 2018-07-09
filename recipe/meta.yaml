@@ -29,7 +29,7 @@ source:
 
 build:
   number: 2
-  skip: true  # [win or py!=36]
+  skip: true  # [win]
 
 requirements:
   build:
