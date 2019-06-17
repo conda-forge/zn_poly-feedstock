@@ -1,4 +1,4 @@
-{% set version = "0.9" %}
+{% set version = "0.9.1" %}
 {% set name = "zn_poly" %}
 
 package:
@@ -6,39 +6,19 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: http://web.maths.unsw.edu.au/~davidharvey/code/zn_poly/releases/{{ name }}-{{ version }}.tar.gz
-  sha256: a1a085897c68889720ad27e98d2b54753397bd5a85433126327bc4b35511b4cf
-  patches:
-    # Patches from https://github.com/sagemath/sage
-    # Fix potential redefinition of `ulong` (in combination with other headers).
-    - patches/profiler.c.patch
-    - patches/zn_poly.h.patch
-    # Fix "jump into scope of identifier with variably modified type" errors.
-    - patches/mpn_mulmid-tune.c.patch
-    - patches/mulmid-tune.c.patch
-    - patches/mul-tune.c.patch
-    # Fix a potential problem when the value of ZNP_mpn_smp_kara_thresh is SIZE_MAX
-    - patches/mpn_mulmid-test.c.patch
-    # fix provided by upstream (David Harvey)
-    - patches/fix_fudge_factor_in_nuss-test.c.patch
-    # Improves the Python script creating the Makeefile for better use at least
-    # within Sage; see patch for details.
-    - patches/makemakefile.py.patch
-
+  url: https://gitlab.com/sagemath/zn_poly/-/archive/0.9.1/zn_poly-{{ version }}.tar.gz
+  sha256: d11aea5646cd72ea44ce8dd0d996cf2ea498e882ed96304a74481c4eb6e01093
 
 build:
-  number: 1002
+  number: 0
   skip: true  # [win]
 
 requirements:
   build:
     - libtool
     - {{ compiler('c') }}
-    - python  *
+    - python 2.7
   host:
-    - gmp
-  run:
     - gmp
 
 test:
