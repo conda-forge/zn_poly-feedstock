@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.com/sagemath/zn_poly/-/archive/{{ version }}/zn_poly-{{ version }}.tar.gz
-  sha256: 312b85eee1e2ae6bed247f50c4d9191f1216f536028ebc5c85104de3e8e90d4d
+  sha256: 6b4bb9f931d7ccc4cd5727faad87fbc3eed2e6a91cbd7f7c32138f6cfde39c6b
 
 build:
   number: 0
