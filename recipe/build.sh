@@ -23,7 +23,9 @@ chmod +x configure
 make tune
 tune/tune > src/tuning.c
 make
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 make check
+fi
 
 if [  "$(uname)" != "Darwin" ]; then
     make libzn_poly.so
