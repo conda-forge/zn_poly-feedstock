@@ -5,8 +5,7 @@ export LDFLAGS="-L$PREFIX/lib $LDFLAGS"
 export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
 export CFLAGS="-g -O3 -fPIC $CFLAGS"
 
-if [ "$(uname)" == "Darwin" ]
-then
+if [[ "$target_platform" == osx-* ]]; then
     export CFLAGS="-Wno-unknown-attributes $CFLAGS"
 fi
 
@@ -20,19 +19,16 @@ chmod +x configure
         --cppflags="$CPPFLAGS" \
         --cxxflags="$CXXFLAGS"
 
-make tune
-tune/tune > src/tuning.c
-make
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-make check
-fi
-
-if [  "$(uname)" != "Darwin" ]; then
-    make libzn_poly.so
+  make tune
+  tune/tune > src/tuning.c
+  make
+  make check
 else
-    make libzn_poly.dylib
+  make
 fi
 
+make libzn_poly${SHLIB_EXT}
 make install
 
 cp libzn_poly*$SHLIB_EXT "$PREFIX/lib"
