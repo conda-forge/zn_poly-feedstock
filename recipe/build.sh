@@ -1,8 +1,7 @@
 #!/bin/bash
 
-export CPPFLAGS="-I$PREFIX/include $CPPFLAGS"
-export LDFLAGS="-L$PREFIX/lib $LDFLAGS"
-export LD_LIBRARY_PATH="$PREFIX/lib:$LD_LIBRARY_PATH"
+unset _CONDA_PYTHON_SYSCONFIGDATA_NAME
+
 export CFLAGS="-g -O3 -fPIC $CFLAGS"
 
 if [[ "$target_platform" == osx-* ]]; then
