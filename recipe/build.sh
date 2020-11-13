@@ -8,10 +8,12 @@ if [[ "$target_platform" == osx-* ]]; then
     export CFLAGS="-Wno-unknown-attributes $CFLAGS"
 fi
 
+set -x
 chmod +x configure
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
- (export CC=$CC_FOR_BUILD
+ (
+  export CC=$CC_FOR_BUILD
   export CFLAGS=""
   export CXXFLAGS=""
   export CPPFLAGS=""
