@@ -19,6 +19,7 @@ requirements:
     - {{ compiler('c') }}
     - python *
     - make
+    - gmp    # [build_platform != target_platform]
   host:
     - gmp
 
