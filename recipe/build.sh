@@ -10,7 +10,7 @@ fi
 
 chmod +x configure
 
-if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
  (export CC=$CC_FOR_BUILD
   export CFLAGS=""
   export CXXFLAGS=""
