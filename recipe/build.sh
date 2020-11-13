@@ -24,6 +24,8 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
   make
   make check
 else
+  CC=$CC_FOR_BUILD CFLAGS="" CXXFLAGS="" CPPFLAGS="" LDFLAGS="-L$BUILD_PREFIX/lib -Wl,-rpath,$BUILD_PREFIX/lib" make tune
+  tune/tune > src/tuning.c
   make
 fi
 
