@@ -29,6 +29,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   cp tune/tune $BUILD_PREFIX/bin/
   make clean
  )
+ EXTRA_CONFIGURE_ARGS="--disable-tuning"
 fi
 
 ./configure \
@@ -37,10 +38,11 @@ fi
         --cflags="$CFLAGS" \
         --ldflags="$LDFLAGS" \
         --cppflags="$CPPFLAGS" \
-        --cxxflags="$CXXFLAGS"
+        --cxxflags="$CXXFLAGS" ${EXTRA_CONFIGURE_ARGS}
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
-  $BUILD_PREFIX/bin/tune > src/tuning.c
+  rm -rf tune/tuning.c
+  $BUILD_PREFIX/bin/tune > tune/tuning.c
   make
 else
   make tune
