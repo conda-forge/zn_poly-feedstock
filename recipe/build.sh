@@ -25,10 +25,10 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
         --ldflags="$LDFLAGS" \
         --cppflags="$CPPFLAGS" \
         --cxxflags="$CXXFLAGS"
+  make tune
+  cp tune/tune $BUILD_PREFIX/bin/
+  make clean
  )
- make tune
- cp tune/tune $BUILD_PREFIX/bin/
- make clean
 fi
 
 ./configure \
