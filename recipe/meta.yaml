@@ -17,8 +17,9 @@ requirements:
   build:
     - libtool
     - {{ compiler('c') }}
-    - python 2.7
+    - python *
     - make
+    - gmp    # [build_platform != target_platform]
   host:
     - gmp
 
